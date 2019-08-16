@@ -8,13 +8,8 @@ import java.util.List;
 
 public class TokenizeExample {
 
-    public static void main(String[] args) {
+    public String tokenize(final String input) {
         StanfordCoreNLP stanfordCoreNLP = Pipeline.getPipeline();
-
-        String input = "President Xi Jinping of China," +
-                " on his first state visit to the United States," +
-                " showed off his familiarity with American history and pop culture on Tuesday night." +
-                "He was surprised by the size of the Grand Canyon";
 
         CoreDocument coreDocument = new CoreDocument(input);
 
@@ -22,8 +17,11 @@ public class TokenizeExample {
 
         List<CoreLabel> words = coreDocument.tokens();
 
+        StringBuilder sb = new StringBuilder();
         words.stream()
                 .map(CoreLabel::originalText)
-                .forEach(System.out::println);
+                .forEach(s-> sb.append(s).append('\n'));
+
+        return sb.toString();
     }
 }
