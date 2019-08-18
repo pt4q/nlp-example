@@ -12,11 +12,19 @@ public class Runner {
 
         StanfordCoreNLP pipeline = Pipeline.getPipeline();
 
-        Tokenizer tokenizer = new Tokenizer(pipeline);
-        System.out.println(tokenizer.tokenize(input));
 
-        Sentencer sentencer = new Sentencer(pipeline);
-        System.out.println(sentencer.splitSentences(input));
+//        Tokenizer tokenizer = new Tokenizer(pipeline);
+//        System.out.println(tokenizer.tokenize(input));
+//
+//        Sentencer sentencer = new Sentencer(pipeline);
+//        System.out.println(sentencer.splitSentences(input));
+
+//        POSFinder finder = new POSFinder(pipeline);
+//        System.out.println(finder.find(input));
+
+        Lemmanizer lemmanizer = new Lemmanizer(pipeline);
+        System.out.println(lemmanizer.lemmanize(input));
+
 
     }
 }
