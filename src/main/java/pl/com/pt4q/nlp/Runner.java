@@ -25,9 +25,14 @@ public class Runner {
 //        Lemmanizer lemmanizer = new Lemmanizer(pipeline);
 //        System.out.println(lemmanizer.lemmanize(input));
 
-        NERFinder nerFinder = new NERFinder(pipeline);
+//        NERFinder nerFinder = new NERFinder(pipeline);
+//        execution.start();
+//        System.out.println(nerFinder.listToString(nerFinder.analyze(input)));
+//        execution.stopToMillis();
+
+        SentimentAnalyzer sentiment = new SentimentAnalyzer(pipeline);
         execution.start();
-        System.out.println(nerFinder.listToString(nerFinder.analyze(input)));
+        System.out.println(sentiment.listToString(sentiment.analyze(input)));
         execution.stopToMillis();
     }
 }
